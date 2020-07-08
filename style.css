@@ -1,0 +1,560 @@
+/* RESET
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* end reset */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #c6c7cc;
+  color: #333543;
+  min-height: 100vh;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+}
+@media (max-width: 800px) {
+  .page {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 70vh;
+  }
+}
+.left {
+  display: grid;
+}
+.right {
+  display: grid;
+}
+
+header,
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.33rem;
+}
+
+header,
+form {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 1rem;
+}
+header {
+  min-height: 7vh;
+}
+
+form input,
+form button {
+  background: none;
+  border: none;
+  color: #333543;
+  font-size: 16px;
+  font-family: "Roboto Mono", sans-serif;
+  grid-row: 1;
+  padding: 10.5px;
+  z-index: 1;
+}
+form input {
+  border-bottom: 4px solid #967ADC;
+  caret-color: #967ADC;
+}
+form button {
+  color: #333543;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  color: #967ADC;
+}
+
+h1 {
+  display: grid;
+  justify-items: center;
+  align-items: end;
+  padding-bottom: 8px;
+}
+
+.todo-container,
+.completed-todo {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem;
+  min-height: 10vh;
+  transition: all 0.3s ease;
+}
+
+ul div {
+  transition: all 0.3s ease;
+}
+
+.todo-list {
+  min-width: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+
+
+.completed-list {
+  min-width: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.todo {
+  margin: 0.5rem;
+  min-width: 90%;
+  color: #333543;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.todo-item {
+  padding: 8px;
+}
+
+#todo-title {
+  border-bottom: 0.1rem solid #262829;
+}
+
+.trash-btn,
+.completed-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.trash-btn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #333543;
+}
+
+.completed-btn {
+  color: #333543;
+}
+
+.completed,
+.completed .trash-btn,
+.completed .completed-btn {
+  color: #686b7e;
+}
+
+.completed-btn:hover {
+  color: #967ADC;
+}
+
+.trash-btn:hover {
+  color: #967ADC;
+}
+
+.fa-times,
+.fa-check-square,
+.fa-square {
+  pointer-events: none;
+}
+
+
+.fall {
+  transform: translateX(-15rem);
+  opacity: 0;
+}
+
+footer {
+  height: 5vh;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-todo {
+  background: none;
+  border: none;
+  border-bottom: 4px solid #967ADC;
+  color: #333543;
+  padding: 11px 11px 7px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease-out;
+}
+
+.new-todo:hover {
+  background: #967ADC;
+  color: #262829;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeOutOpacity {
+  0% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.fadeDelete {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeDelete;
+  animation-name: fadeDelete;
+}
+
+@-webkit-keyframes fadeDelete {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeDelete {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+}
+
+.alert {
+  display: grid;
+  z-index: 0;
+  align-content: center;
+  justify-content: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  opacity: 0;
+  padding: 8px 8px 12px;
+  background: #967ADC;
+  position: relative;
+  top: -100%;
+  color: #2f3640;
+  transition: all 0.5s ease;
+}
+
+.closebtn {
+  color: #2f3640;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: #333543;
+}
+
+.yellow {
+  color: #fff171;
+}
+.green {
+  color: #9dff6f;
+}
+.blue {
+  color: #2dcdff;
+}
+.pink {
+  color: #ff1fa5;
+}
