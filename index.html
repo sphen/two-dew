@@ -1,54 +1,64 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Todo App</title>
-        <meta name="description" content="A simple todo app">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body class="fadeInDown">
-        <header>
-            <h1>simple todo app</h1>
-            
-        </header>
-        <div class="page">
-            <div class="left">
-                <form>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>adieu todo</title>
+    <meta name="description" content="A simple todo app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="fadeInDown">
+
+
+    
+    <div class="page">
+        <div class="left">
+            <form>
+                <div class="add-todo">
+                    <h1 class="title">
+                        <span id="name" contenteditable="true"></span>
+                    </h1>
+                    <div class="add-task">
                     <input type="text" class="todo-input" placeholder="add a task" autofocus>
                     <button class="todo-button" type="submit">
-                        <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus"></i>
                     </button>
                     <div class="alert">
-                        <span class="closebtn" onclick="this.parentElement.style.opacity='0';this.parentElement.style.top='-100%'">
-                            please enter a task
-                            <i class="fas fa-times"></i>
-                        </span> 
-                      </div>
-                </form>
-               
+                        please enter a task
+                        <span class="closebtn"
+                        onclick="this.parentElement.style.opacity='0';this.parentElement.style.top='-50%'">
+                        
+                        <i class="fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <h1 id="todo-title">TO DO</h1>
+            <div class="todo-container add-to-list fade">
+                <ul class="todo-list" id="todo-list">
+                </ul>
             </div>
-            <div class="right">
-                <h1 id="todo-title">to do</h1>
-        <div class="todo-container">
-            <ul class="todo-list" id="todo-list">
-            </ul>
-        </div>
-        <h1 id="todo-title">completed</h1>
-        <div class="completed-todo" id="completed-todo">
-            <ul class="completed-list" id="completed-list">
-           </ul>
-        </div>
+            <h1 id="todo-title">COMPLETED</h1>
+            <div class="completed-todo fade" id="completed-todo">
+                <ul class="completed-list" id="completed-list">
+                </ul>
+            </div>
 
-            </div>
         </div>
-       
-        
-        <footer><button class="new-todo">new todo list</button></footer>
-        
-        <script src="./app.js" async defer></script>
-    </body>
+    </div>
+
+
+    <footer><button class="new-todo">new todo list</button></footer>
+
+    <script src="./app.js" async defer></script>
+</body>
+
 </html>
